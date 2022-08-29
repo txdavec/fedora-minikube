@@ -6,6 +6,7 @@ setup minikube in fedora with kvm2
 ## Fedora release 36 (Thirty Six)
 
 sudo dnf -y update
+sudo dnf -y install vim-enhanced
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
 
