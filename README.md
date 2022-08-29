@@ -22,11 +22,12 @@ sudo usermod --append --groups libvirt $(whoami)
 minikube config set driver kvm2
 minikube delete
 minikube start
+minikube addons enable ingress
 
 mkdir ~/.bashrc.d
 vi ~/.bashrc.d/k8s
 # add
-alias kubectl="minikube kubectl --"
+alias kc="minikube kubectl --"
 
 kubectl get nodes
 minikube dashboard
@@ -61,6 +62,7 @@ minikube status
 minikube stop
 
 # to clean up everything, VMs, settings
+minikube stop
 minikube delete --all --purge
 
 ```
