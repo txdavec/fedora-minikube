@@ -29,11 +29,13 @@ vi ~/.bashrc.d/k8s
 # add
 alias kc="minikube kubectl --"
 
-kubectl get nodes
+source ~/.bashrc
+
+kc get nodes
 minikube dashboard
 
 # running a test pod
-kubectl apply -f - <<EOF
+kc apply -f - <<EOF
 apiVersion: v1
 kind: Pod
 metadata:
@@ -54,9 +56,9 @@ spec:
   restartPolicy: Never
 EOF
 
-kubectl logs testpod
+kc logs testpod
 
-kubectl delete pod testpod
+kc delete pod testpod
 
 minikube status
 minikube stop
